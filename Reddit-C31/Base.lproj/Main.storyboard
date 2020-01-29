@@ -1,24 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VFy-7e-yHN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Post List Table View Controller-->
+        <scene sceneID="MyV-4i-xjg">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="VFy-7e-yHN" customClass="JDCPostListTableViewController" customModule="Reddit_C31" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d64-Ye-PIE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="182" id="2Oe-0E-G1T" customClass="JDCPostTableViewCell" customModule="Reddit_C31" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="182"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Oe-0E-G1T" id="GIq-5g-fmL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="182"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="krZ-Fi-OhK">
+                                            <rect key="frame" x="19" y="27" width="127.5" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="krZ-Fi-OhK" secondAttribute="height" multiplier="1:1" id="AaJ-9I-MSK"/>
+                                                <constraint firstAttribute="height" constant="128" id="quf-mo-3UP"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIp-pn-Yij">
+                                            <rect key="frame" x="166.5" y="27" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="krZ-Fi-OhK" firstAttribute="leading" secondItem="GIq-5g-fmL" secondAttribute="leading" constant="19" id="2Gn-UK-BHv"/>
+                                        <constraint firstItem="krZ-Fi-OhK" firstAttribute="centerX" secondItem="GIq-5g-fmL" secondAttribute="centerX" multiplier="0.4" id="9Sd-zo-Dx8"/>
+                                        <constraint firstItem="krZ-Fi-OhK" firstAttribute="centerY" secondItem="GIq-5g-fmL" secondAttribute="centerY" id="OBe-qH-W8E"/>
+                                        <constraint firstItem="HIp-pn-Yij" firstAttribute="top" secondItem="krZ-Fi-OhK" secondAttribute="top" id="Os5-wn-8eu"/>
+                                        <constraint firstItem="HIp-pn-Yij" firstAttribute="leading" secondItem="krZ-Fi-OhK" secondAttribute="trailing" constant="20" id="aC0-sv-IJq"/>
+                                        <constraint firstItem="krZ-Fi-OhK" firstAttribute="top" secondItem="GIq-5g-fmL" secondAttribute="top" constant="27" id="fg3-8r-Mbu"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HIp-pn-Yij" secondAttribute="trailing" constant="20" symbolic="YES" id="sod-VH-Jxv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="postImageView" destination="krZ-Fi-OhK" id="SJ7-Kn-RDY"/>
+                                    <outlet property="titleLabel" destination="HIp-pn-Yij" id="rOI-pI-3zs"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VFy-7e-yHN" id="Rep-eS-H82"/>
+                            <outlet property="delegate" destination="VFy-7e-yHN" id="gVX-5d-Lob"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klg-cb-azW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-252.17391304347828" y="-2.0089285714285712"/>
         </scene>
     </scenes>
 </document>

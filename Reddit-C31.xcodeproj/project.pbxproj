@@ -13,6 +13,10 @@
 		6DAAF98A23E1ECA20072D03C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DAAF98923E1ECA20072D03C /* Assets.xcassets */; };
 		6DAAF98D23E1ECA20072D03C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAAF98B23E1ECA20072D03C /* LaunchScreen.storyboard */; };
 		6DAAF99023E1ECA20072D03C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAAF98F23E1ECA20072D03C /* main.m */; };
+		6DAAF99E23E1F3BB0072D03C /* JDCPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAAF99D23E1F3BB0072D03C /* JDCPost.m */; };
+		6DAAF9A123E1F8850072D03C /* JDCPostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DAAF9A023E1F8850072D03C /* JDCPostController.m */; };
+		6DAAF9A523E20CB80072D03C /* JDCPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAAF9A423E20CB80072D03C /* JDCPostTableViewCell.swift */; };
+		6DAAF9A723E20DF00072D03C /* JDCPostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAAF9A623E20DF00072D03C /* JDCPostListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,13 @@
 		6DAAF98C23E1ECA20072D03C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DAAF98E23E1ECA20072D03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DAAF98F23E1ECA20072D03C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6DAAF99C23E1F3BB0072D03C /* JDCPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCPost.h; sourceTree = "<group>"; };
+		6DAAF99D23E1F3BB0072D03C /* JDCPost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDCPost.m; sourceTree = "<group>"; };
+		6DAAF99F23E1F8850072D03C /* JDCPostController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCPostController.h; sourceTree = "<group>"; };
+		6DAAF9A023E1F8850072D03C /* JDCPostController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDCPostController.m; sourceTree = "<group>"; };
+		6DAAF9A323E20CB80072D03C /* Reddit-C31-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reddit-C31-Bridging-Header.h"; sourceTree = "<group>"; };
+		6DAAF9A423E20CB80072D03C /* JDCPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDCPostTableViewCell.swift; sourceTree = "<group>"; };
+		6DAAF9A623E20DF00072D03C /* JDCPostListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDCPostListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +96,8 @@
 		6DAAF99723E1ECFA0072D03C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6DAAF99C23E1F3BB0072D03C /* JDCPost.h */,
+				6DAAF99D23E1F3BB0072D03C /* JDCPost.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,6 +105,7 @@
 		6DAAF99823E1ED020072D03C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6DAAF9A223E20A7E0072D03C /* CustomCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +122,7 @@
 		6DAAF99A23E1ED0C0072D03C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6DAAF9A623E20DF00072D03C /* JDCPostListTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -115,8 +130,19 @@
 		6DAAF99B23E1ED120072D03C /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6DAAF99F23E1F8850072D03C /* JDCPostController.h */,
+				6DAAF9A023E1F8850072D03C /* JDCPostController.m */,
 			);
 			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		6DAAF9A223E20A7E0072D03C /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				6DAAF9A423E20CB80072D03C /* JDCPostTableViewCell.swift */,
+				6DAAF9A323E20CB80072D03C /* Reddit-C31-Bridging-Header.h */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,11 +171,13 @@
 		6DAAF97223E1EC9F0072D03C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JDC;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Jon Corn";
 				TargetAttributes = {
 					6DAAF97923E1EC9F0072D03C = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -192,6 +220,10 @@
 				6DAAF97F23E1EC9F0072D03C /* AppDelegate.m in Sources */,
 				6DAAF99023E1ECA20072D03C /* main.m in Sources */,
 				6DAAF98223E1EC9F0072D03C /* SceneDelegate.m in Sources */,
+				6DAAF9A523E20CB80072D03C /* JDCPostTableViewCell.swift in Sources */,
+				6DAAF9A123E1F8850072D03C /* JDCPostController.m in Sources */,
+				6DAAF99E23E1F3BB0072D03C /* JDCPost.m in Sources */,
+				6DAAF9A723E20DF00072D03C /* JDCPostListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,14 +363,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Reddit-C31/Info.plist";
+				INFOPLIST_FILE = "Reddit-C31/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jdcorn.Reddit-C31";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Reddit-C31/Views/CustomCells/Reddit-C31-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -347,14 +383,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Reddit-C31/Info.plist";
+				INFOPLIST_FILE = "Reddit-C31/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jdcorn.Reddit-C31";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Reddit-C31/Views/CustomCells/Reddit-C31-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
